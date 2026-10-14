@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Gotham Frontend Command</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-mark" aria-label="Bat signal">🦇</div>
+    <div class="brand-copy"><strong>GOTHAM // FRONTEND COMMAND</strong><span>WayneTech diagnostic systems</span></div>
+    <div class="privacy"><span class="pulse"></span> BATCAVE SECURE · LOCAL ONLY</div>
+  </header>
+  <section id="dedicationOverlay" class="dedication-overlay" role="dialog" aria-modal="true" aria-labelledby="dedicationTitle">
+    <div class="dedication-grid" aria-hidden="true"></div>
+    <article class="dedication-card">
+      <div class="dedication-topline"><span>WAYNETECH // PRIVATE TRANSMISSION</span><span>GOTHAM CITY</span></div>
+      <div class="dedication-emblem" aria-hidden="true">🦇</div>
+      <p class="dedication-kicker">A MESSAGE FOR ONE VERY PARTICULAR DARK KNIGHT</p>
+      <h1 id="dedicationTitle">TO MY <span>BATMAN</span></h1>
+      <div class="dedication-copy">
+        <p>Hey, Toffee Nose.</p>
+        <p>I don't have the money to buy you the things I'd want to give you. And honestly, sometimes that makes me feel pretty small.</p>
+        <p>But I kept thinking about what I'd do if I had the money.</p>
+        <p>So I made you this instead.</p>
+        <p>It's not perfect, and I'm still learning, but I put my time and effort into making something that might actually be useful to you. Something you can install, use, and hopefully find helpful in your work.</p>
+        <p>And if it helps you even a little bit, then every frustrating moment, every mistake, and every hour I spent figuring things out will have been worth it.</p>
+        <p>Maybe one day I'll be able to give you all the things I wish I could give you now.</p>
+        <p>Until then, here's a little piece of Gotham, made just for you.</p>
+      </div>
+      <p class="dedication-signoff">STAY LEGENDARY, BATMAN. <span>🖤</span></p>
+      <p class="dedication-signature">— Your favourite admirer of the Dark Knight</p>
+      <button id="enterBatcaveBtn" class="primary dedication-enter">ENTER THE BATCAVE <span aria-hidden="true">↗</span></button>
+      <div class="dedication-footnote">A PERSONAL GIFT · BUILT WITH CARE · MADE TO BE USEFUL</div>
+    </article>
+  </section>
+  <section id="missionOverlay" class="mission-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="missionOverlayTitle">
+    <div class="mission-overlay-grid"></div>
+    <div class="mission-report">
+      <div class="report-topline"><span>WAYNETECH // BATCOMPUTER</span><span>GOTHAM CITY · FIELD REPORT</span></div>
+      <div class="report-emblem" aria-hidden="true">🦇</div>
+      <div class="eyebrow"><span class="signal-line"></span> MISSION REPORT // FILE SEALED</div>
+      <h1 id="missionOverlayTitle">MISSION <span>COMPLETE</span></h1>
+      <p class="report-subtitle">Good work, Dark Knight. Reconnaissance is complete. Review every clue before changing source code.</p>
+      <div class="report-case-number"><span>CASE NUMBER</span><strong id="overlayCaseNumber">000</strong><small>GCPD · EVIDENCE ARCHIVE</small></div>
+      <div class="report-stats">
+        <div><span>FILES INVESTIGATED</span><strong id="overlayFileCount">0</strong></div>
+        <div><span>CLUES COLLECTED</span><strong id="overlayIssueCount">0</strong></div>
+        <div><span>HIGH SEVERITY</span><strong id="overlayHighCount">0</strong></div>
+      </div>
+      <p id="overlayMissionMessage" class="report-message">The evidence is ready for review.</p>
+      <button id="returnToBoardBtn" class="primary report-return">RETURN TO DETECTIVE BOARD <span aria-hidden="true">↗</span></button>
+      <div class="report-footnote">LOCAL SCAN ONLY · HEURISTIC FINDINGS ARE NOT CONFIRMED DEFECTS</div>
+    </div>
+  </section>
+  <main id="dashboardMain">
+    <section class="hero">
+      <div class="eyebrow"><span class="signal-line"></span> GOTHAM CITY // NIGHT SHIFT DIAGNOSTICS</div>
+      <h1>Good evening,<br><span>Dark Knight.</span></h1>
+      <p>Your city has bugs to catch. Audit HTML, CSS, JavaScript, TypeScript, Python and C++ source files. No cloud. No API key. Your selected files stay in this browser.</p>
+      <div class="hero-stamp"><span class="stamp-icon">✦</span><span><b>MISSION STATUS</b><small id="missionStatus">Ready for reconnaissance</small></span><span class="stamp-right">GCPD // 01</span></div>
+      <div class="threat-panel" aria-live="polite">
+        <div class="threat-copy"><span class="eyebrow-small">GOTHAM THREAT LEVEL</span><strong id="threatLabel">AWAITING INTEL</strong><small id="threatHint">Run diagnostics to assess the current case.</small></div>
+        <div class="threat-track" role="progressbar" aria-label="Potential issue threat level" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="threatFill"></span></div>
+        <div class="threat-score"><strong id="threatScore">—</strong><small>/ 100</small></div>
+      </div>
+    </section>
+    <section class="project-card">
+      <div class="project-icon">⌖</div>
+      <div class="project-meta">
+        <strong id="projectName">No project selected</strong>
+        <span id="projectPath">Select a project folder on supported desktop browsers, or choose files on mobile. Files are analyzed locally.</span>
+      </div>
+      <div class="pick-actions"><button id="chooseBtn" class="primary">Select project folder <span>↗</span></button><button id="chooseFilesBtn" class="secondary">Choose files</button><input id="folderInput" type="file" webkitdirectory directory multiple hidden><input id="filesInput" type="file" multiple accept=".html,.htm,.css,.scss,.sass,.less,.js,.jsx,.mjs,.cjs,.ts,.tsx,.vue,.svelte,.py,.cpp,.cc,.cxx,.h,.hpp,.hh,.hxx,.json,.md" hidden></div>
+    </section>
+    <section class="toolbar">
+      <div><h2>Case diagnostics</h2><p id="statusText">Awaiting your first case, Detective.</p></div>
+      <div class="actions">
+        <select id="severityFilter" aria-label="Filter by severity">
+          <option value="all">All severities</option><option value="High">High</option><option value="Medium">Medium</option><option value="Low">Low</option><option value="Info">Info</option>
+        </select>
+        <button id="exportBtn" class="secondary" disabled>Export case file ↓</button>
+        <button id="scanBtn" class="primary" disabled>Run diagnostics</button>
+      </div>
+    </section>
+    <section id="summary" class="summary">
+      <div class="metric"><span>FILES INVESTIGATED</span><strong id="fileCount">—</strong><small>Evidence reviewed</small></div>
+      <div class="metric"><span>CLUES DETECTED</span><strong id="issueCount">—</strong><small>Worth investigating</small></div>
+      <div class="metric"><span>URGENT THREATS</span><strong id="highCount">—</strong><small>Prioritise these</small></div>
+      <div class="metric"><span>TECH SIGNATURES</span><strong id="stackCount">—</strong><small>Detected from evidence</small></div>
+    </section>
+    <section id="missionComplete" class="mission-complete" hidden aria-live="polite">
+      <div class="mission-emblem">✦</div><div><span class="eyebrow-small">CASE UPDATE // GOTHAM CITY</span><h2 id="missionTitle">Mission complete, Dark Knight.</h2><p id="missionMessage">The evidence has been collected. Review each clue before making changes.</p></div><div class="mission-stamp">CASE<br><strong id="caseNumber">001</strong></div>
+    </section>
+    <section class="results-card">
+      <div class="results-head"><div><h3>Detective board <span class="case-chip">EVIDENCE FILE</span></h3><span id="resultCaption">Run diagnostics to pin your first clues.</span></div><div class="legend"><span class="dot high"></span>High <span class="dot medium"></span>Medium <span class="dot low"></span>Low</div></div>
+      <div id="findings" class="findings">
+        <div class="empty-state"><div class="empty-icon">🦇</div><strong>No clues yet. Gotham awaits.</strong><p>Select a case folder and run diagnostics. Each finding includes its file, line when available, why it matters, and a suggested next step. Review the evidence before making changes.</p></div>
+      </div>
+    </section>
+    <section id="findingDetails" class="detail-card" hidden aria-live="polite">
+      <div class="detail-heading"><div><span class="eyebrow-small">SMART DETECTIVE // EVIDENCE INSPECTION</span><h2 id="detailTitle">Select a clue</h2></div><button id="closeDetailsBtn" class="secondary">Close ×</button></div>
+      <div class="detail-meta"><span id="detailSeverity" class="severity Medium">Severity</span><span id="detailCategory" class="tag">Category</span><code id="detailLocation">file:line</code></div>
+      <h3>Why it matters</h3><p id="detailWhy"></p>
+      <h3>Suggested next step</h3><p id="detailFix"></p><button id="copyFixBtn" class="secondary">Copy suggested fix</button>
+      <h3>Source evidence</h3><pre id="detailSource" class="source-excerpt"></pre>
+    </section>
+    <section class="history-card"><div class="detail-heading"><div><span class="eyebrow-small">GCPD ARCHIVE</span><h2>Recent case history</h2></div><span class="tag">This session</span></div><div id="caseHistory" class="case-history">Your recent scan summaries are saved locally in this browser on this device.</div></section>
+    <footer><span>GOTHAM FRONTEND COMMAND · PORTFOLIO BUILD</span><span>Browser-local heuristic analysis · Verify findings before changing code.</span></footer>
+  </main>
+  <script src="renderer.js"></script>
+</body>
+</html>

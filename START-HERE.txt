@@ -1,0 +1,9 @@
+GOTHAM FRONTEND COMMAND — BROWSER EDITION
+
+1. Extract this ZIP.
+2. Open index.html in a modern browser to try it locally.
+3. On supported desktop Chrome/Edge, choose Select project folder and grant read access.
+4. On mobile, use Choose files to select source files. Full folder scanning is not consistently supported on Android.
+5. To publish a public link, upload these files to a static host (for example GitHub Pages).
+
+No API key or backend is used. History is saved only in this browser/device.
